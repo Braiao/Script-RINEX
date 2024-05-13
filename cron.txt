@@ -1,0 +1,15 @@
+ftp_host=200.145.185.149
+ftp_user=cigala_ftp
+ftp_password=
+station=STCB
+begin=$(date +%y%j)
+end=$(date +%y%j)
+0 * * * * /usr/bin/php /serv_createRinex-both.php
+
+ftp_host=200.145.185.149
+ftp_user=cigala_ftp
+ftp_password=
+station=STSH
+begin=$(date +%y%j)
+end=$(date +%y%j)
+0 * * * * /usr/bin/php /serv_createRinex-both.php
