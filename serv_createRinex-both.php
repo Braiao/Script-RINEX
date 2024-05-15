@@ -12,7 +12,12 @@
  *         [interval=15] [force_mode=[211|3] [ftp_root=Path/to/ftp]
  */
 require_once 'CigalaRinex.php';
-//ini_set("max_execution_time", 15000);                                  
+//ini_set("max_execution_time", 15000);      
+
+
+
+
+
 $obj = new CigalaRinex();
 $obj->ftp_connect();
 $obj->db_connect();
