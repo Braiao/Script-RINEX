@@ -38,7 +38,7 @@ foreach ($stations as $station) {
     $lenght = count($files);
    // $obj->setReceiverParams();
 
-    echo "Converting: <br>";
+  //  echo "Converting: <br>";
 
     flush();
     $merge = [];
