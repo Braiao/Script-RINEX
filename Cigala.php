@@ -403,7 +403,7 @@ class Cigala
      */
     function setStationIDByName()
     {
-        $sql = "select id from station where name='$this->name'";
+        /* $sql = "select id from station where name='$this->name'";
         $rs = pg_query($sql);
         if (pg_num_rows($rs)) {
             $ret = pg_fetch_row($rs);
@@ -412,7 +412,7 @@ class Cigala
         else {
             echo "<br>Warning: station not found: $this->name!!!<br>";
             $this->station_id = -1; //no station found
-        }
+        } */
     }
 
     /**
