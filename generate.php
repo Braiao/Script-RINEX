@@ -48,7 +48,7 @@ foreach ($stations as $station) {
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
     $i = 0;
-    $files = ['file1', 'file2']; // Adicione seus arquivos aqui
+    $files = ['STSH137a00.24_', 'file2']; // Adicione seus arquivos aqui
     $lenght = count($files);
    // $obj->setReceiverParams();
 
