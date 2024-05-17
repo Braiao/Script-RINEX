@@ -26,7 +26,7 @@ $start = $obj->start_counter();
 // Defina as estações, ano e dia fixos
 $stations = ['STCB', 'STSH']; // Adicione suas estações específicas aqui
 $year = 2024; // Defina o ano
-$day_year = 24130; // Defina o dia do ano
+$day_year = 24137; // Defina o dia do ano
 
 // Defina a pasta onde deseja salvar os arquivos baixados
 $local_folder = '/home/braia/RINEX3';
