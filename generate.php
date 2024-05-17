@@ -4,12 +4,21 @@ ini_set("max_execution_time", 15000);
 ini_set("output_buffering", 128);
 
 $obj = new CigalaRinex();
-$obj->ftp_connect();
-//$obj->db_connect();
-if(!$obj->ftp_connect())
+$ftp_host = "200.145.185.149";
+$ftp_user = "cigala_ftp";
+$ftp_password = "B0mb31r1nh0";
+
+$conn_id = ftp_connect($ftp_host);
+if(ftp_login($conn_id, $ftp_user, $ftp_password))
 {
-    echo "Conexão falhou"; 
+    echo "Conectado ao FTP";
+
+    ftp_pasv($conn_id, true);
 }
+
+//$obj->ftp_connect();
+//$obj->db_connect();
+
 $start = $obj->start_counter();
 
 // Defina as estações, ano e dia fixos
@@ -78,7 +87,9 @@ foreach ($stations as $station) {
     }
 }
 
-$obj->ftp_disconnect();
+
+ftp_close($conn_id);
+//$obj->ftp_disconnect();
 //$obj->db_disconnect();
 
 
