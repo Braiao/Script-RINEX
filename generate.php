@@ -24,7 +24,7 @@ if(ftp_login($conn_id, $ftp_user, $ftp_password))
 $start = $obj->start_counter();
 
 // Defina as estações, ano e dia fixos
-$stations = ['STCB', 'STSH']; // Adicione suas estações específicas aqui
+$stations = ['STSH']; // Adicione suas estações específicas aqui
 $year = 2024; // Defina o ano
 $day_year = 24137; // Defina o dia do ano
 

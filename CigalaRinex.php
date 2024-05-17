@@ -275,7 +275,7 @@ class CigalaRinex extends Cigala {
                 echo "Error on downloading file {$this->getFile()}. ";
             }
             //back to ftp root
-            ftp_cdup($this->ftp_conn);
+            ftp_cdup($this->ftp_conn);  
             ftp_cdup($this->ftp_conn);
             ftp_cdup($this->ftp_conn);
             //echo ftp_pwd($this->ftp_conn)." na conversao <br>";
