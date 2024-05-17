@@ -43,13 +43,12 @@ foreach ($stations as $station) {
     flush();
     $merge = [];
     foreach ($files as $file) {
-        $i++;
         $obj->setFile($file);                                                               
         $obj->getBinaryFile();                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
         $merge[] = $obj->getFile();   
-        echo str_pad("File $i of $lenght.<br>", 512, ' ', STR_PAD_RIGHT);                    
+        //echo str_pad("File $i of $lenght.<br>", 512, ' ', STR_PAD_RIGHT);                    
         flush();                    
     }                
 
