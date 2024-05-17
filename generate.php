@@ -10,12 +10,12 @@ $obj->db_connect();
 $start = $obj->start_counter();
 
 // Defina as estações, ano e dia fixos
-$stations = ['station1', 'station2', 'station3']; // Adicione suas estações específicas aqui
-$year = 2023; // Defina o ano
+$stations = ['STCB', 'STSH']; // Adicione suas estações específicas aqui
+$year = 2024; // Defina o ano
 $day_year = 150; // Defina o dia do ano
 
 // Defina a pasta onde deseja salvar os arquivos baixados
-$local_folder = '/caminho/para/a/sua/pasta/';
+$local_folder = '/RINEX3';
 
 foreach ($stations as $station) {
     $obj->setName($station);
@@ -53,13 +53,7 @@ foreach ($stations as $station) {
         flush();                    
     }                
 
-    if ($version === "-R3") {
-        $message = $obj->mergeRinex($merge);                   
-    } else if ($version === "2.11c") {
-        $message = $obj->mergeRinexTeqc($merge, TRUE, "g"); 
-    } else {
-        $message = $obj->mergeRinexTeqc($merge);                                                  
-    }
+    $message = $obj->mergeRinex($merge);                   
 
     $time_rinex = $obj->stop_counter($start);
 
