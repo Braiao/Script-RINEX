@@ -26,9 +26,9 @@
                 else{
                     $snr=false;
                 }
-                
+                $version='3.01'
                                                                                                            
-                $interval=$_REQUEST['interval'];  //set the desired interval                               
+               /*  $interval=$_REQUEST['interval'];  //set the desired interval                               
                 if($_REQUEST['version']=='3.01') {
                     $version="-R3"; // set the version
                 } 
@@ -37,7 +37,7 @@
                 }
                 else {
                     $version=null; //default - 2.11
-                }
+                } */
                                
                // print_r($_REQUEST);
                 
