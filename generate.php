@@ -6,7 +6,7 @@ ini_set("output_buffering", 128);
 $obj = new CigalaRinex();
 $obj->ftp_connect();
 //$obj->db_connect();
-if(!$ftp_connect)
+if(!$obj->ftp_connect())
 {
     echo "Conexão falhou"; 
 }

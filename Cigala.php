@@ -1119,7 +1119,7 @@ class Cigala
 
         // check connection
         if ((!$ftp_conn)) {
-            echo "FTP connection has failed!<br>";
+            echo "FTP connection has failed!";
 
             //echo "Attempted to connect to $this->ftp_host for user $this->ftp_user.<br>";
             return false;
