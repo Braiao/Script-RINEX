@@ -24,9 +24,10 @@ if(ftp_login($conn_id, $ftp_user, $ftp_password))
 $start = $obj->start_counter();
 
 // Defina as estações, ano e dia fixos
-$stations = ['STSH']; // Adicione suas estações específicas aqui
-$year = 2024; // Defina o ano
-$day_year = 24137; // Defina o dia do ano
+$stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
+$year = date("Y"); // Defina o ano
+$array_data = getdate();
+$day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
 
 // Defina a pasta onde deseja salvar os arquivos baixados
 $local_folder = '/home/braia/RINEX3/';
