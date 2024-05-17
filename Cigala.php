@@ -2202,9 +2202,9 @@ class Cigala
     public function setName($name, $set_id = true)
     {
         $this->name = $name;
-        if ($set_id) {
+        /* if ($set_id) {
             $this->setStationIDByName();
-        }
+        } */
     }
 
     public function getYear()

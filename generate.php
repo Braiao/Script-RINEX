@@ -15,7 +15,7 @@ $year = 2024; // Defina o ano
 $day_year = 150; // Defina o dia do ano
 
 // Defina a pasta onde deseja salvar os arquivos baixados
-$local_folder = '/RINEX3';
+$local_folder = '/home/braia/RINEX3';
 
 foreach ($stations as $station) {
     $obj->setName($station);
@@ -23,7 +23,7 @@ foreach ($stations as $station) {
     $obj->setDay($day_year);
 
     // Opcional: Defina o diretório raiz do FTP se necessário
-    $ftp_root = '/some/ftp/root';
+    $ftp_root = '/';
     $obj->ftp_changeRootTo($ftp_root);
 
     // Opcional: SNR
