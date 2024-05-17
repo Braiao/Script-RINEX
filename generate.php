@@ -51,7 +51,7 @@ foreach ($stations as $station) {
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
     $i = 0;
-    $file = $station . "$array_data[yday]" . '00.24_.gz';
+    $file = $station . "$array_data[yday]" . 'a00.24_.gz';
     $files = [$file];
     //$files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
     $lenght = count($files);
