@@ -24,7 +24,7 @@ if(ftp_login($conn_id, $ftp_user, $ftp_password))
 $start = $obj->start_counter();
 
 // Defina as estações, ano e dia fixos
-$stations = ['STCB']; // Adicione suas estações específicas aqui
+$stations = ['STCB', 'STSH']; // Adicione suas estações específicas aqui
 $year = 2024; // Defina o ano
 $day_year = 24137; // Defina o dia do ano
 
@@ -48,7 +48,7 @@ foreach ($stations as $station) {
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
     $i = 0;
-    $files = ['STSH137a00.24_.gz', 'file2']; // Adicione seus arquivos aqui
+    $files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
     $lenght = count($files);
    // $obj->setReceiverParams();
 
