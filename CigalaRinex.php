@@ -260,7 +260,7 @@ class CigalaRinex extends Cigala {
     }
 
 //ok 
-    function getBinaryFile() {
+    function getBinaryFile($ftp_conn) {
 
         //echo $this->getName()."/".$this->getYear()."/".$this->getDay();   
         //echo ftp_pwd($this->ftp_conn)." na conversao <br>";

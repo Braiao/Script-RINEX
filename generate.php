@@ -56,7 +56,7 @@ foreach ($stations as $station) {
     $merge = [];
     foreach ($files as $file) {
         $obj->setFile($file);                                                               
-        $obj->getBinaryFile();                
+        $obj->getBinaryFile($conn_id);                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
         $merge[] = $obj->getFile();   
