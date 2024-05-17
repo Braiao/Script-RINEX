@@ -36,7 +36,7 @@ foreach ($stations as $station) {
     $i = 0;
     $files = ['file1', 'file2']; // Adicione seus arquivos aqui
     $lenght = count($files);
-    $obj->setReceiverParams();
+   // $obj->setReceiverParams();
 
     echo "Converting: <br>";
 
