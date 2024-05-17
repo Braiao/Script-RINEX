@@ -267,7 +267,7 @@ class CigalaRinex extends Cigala {
         //ftp_set_option($this->ftp_conn, FTP_TIMEOUT_SEC, 600*2);
         //echo ftp_get_option ( $this->ftp_conn, FTP_TIMEOUT_SEC );
 
-        if (ftp_chdir($this->ftp_conn, $this->getName() . "/" . $this->getYear() . "/" . $this->getDay())) {
+        if (ftp_chdir($this->ftp_conn, "/" . $this->getName() . "/" . $this->getYear() . "/" . $this->getDay())) {
             //ftp_pasv ($this->ftp_conn, true);
             if (ftp_get($this->ftp_conn, $this->full_rinex_path . $this->getFile(), $this->getFile(), FTP_BINARY)) {
                 //echo "Successfully copied {$this->getFile()}.";
