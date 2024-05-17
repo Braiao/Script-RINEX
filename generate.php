@@ -1,5 +1,5 @@
 <?php
-require_once '/CigalaRinex.php';
+require_once 'CigalaRinex.php';
 ini_set("max_execution_time", 15000);  
 ini_set("output_buffering", 128);
 
