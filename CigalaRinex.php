@@ -10,8 +10,8 @@ require_once 'Cigala.php';
 class CigalaRinex extends Cigala {
 
     public $rinex_path = "tmp/";
-    public $sbf2rin_exe = "sbf2rin";
-    public $sbf2ismr_exe = "sbf2ismr";
+    public $sbf2rin_exe = "/opt/Septentrio/RxTools/bin/sbf2rin";
+    public $sbf2ismr_exe = "/opt/Septentrio/RxTools/bin/sbf2ismr";
     public $x;
     public $y;
     public $z;
@@ -450,10 +450,6 @@ class CigalaRinex extends Cigala {
      * @author Bruno C. Vani
      */
     function sbfConversion($version, $interval, $snr = false, $delete = true, $sufix = "0") {
-
-        if ($version == "2.11c") { //use teqc conversion for rinex civil only
-            return($this->sbfConversionTeqc($interval, $snr, $delete, "C"));
-        }
 
         //convert to rinex        
         if ($snr) {
