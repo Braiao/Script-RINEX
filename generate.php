@@ -14,6 +14,8 @@ if(ftp_login($conn_id, $ftp_user, $ftp_password))
     echo "Conectado ao FTP";
 
     ftp_pasv($conn_id, true);
+
+    $obj->setFtp_conn($conn_id);
 }
 
 //$obj->ftp_connect();
@@ -56,7 +58,7 @@ foreach ($stations as $station) {
     $merge = [];
     foreach ($files as $file) {
         $obj->setFile($file);                                                               
-        $obj->getBinaryFile($conn_id);                
+        $obj->getBinaryFile();                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
         $merge[] = $obj->getFile();   

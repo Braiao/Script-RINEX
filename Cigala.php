@@ -2247,6 +2247,11 @@ class Cigala
         $this->station_id = $id;
     }
 
+    public function setFtp_conn($ftp_conn)
+    {
+        $this->ftp_conn = $ftp_conn;
+    }
+
 
 
     //unnused/
