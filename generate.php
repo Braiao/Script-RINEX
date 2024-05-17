@@ -30,9 +30,10 @@ $array_data = getdate();
 $day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
 
 // Defina a pasta onde deseja salvar os arquivos baixados
-$local_folder = '/home/braia/RINEX3/';
+
 
 foreach ($stations as $station) {
+    $local_folder = '/home/braia/RINEX3/' . $station . '/';
     $obj->setName($station);
     $obj->setYear($year);
     $obj->setDay($day_year);
@@ -49,6 +50,7 @@ foreach ($stations as $station) {
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
     $i = 0;
+    $file = $station . 
     $files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
     $lenght = count($files);
    // $obj->setReceiverParams();
