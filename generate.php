@@ -5,7 +5,7 @@ ini_set("output_buffering", 128);
 
 $obj = new CigalaRinex();
 $obj->ftp_connect();
-$obj->db_connect();
+//$obj->db_connect();
 
 $start = $obj->start_counter();
 
@@ -76,7 +76,7 @@ foreach ($stations as $station) {
 }
 
 $obj->ftp_disconnect();
-$obj->db_disconnect();
+//$obj->db_disconnect();
 
 
 ?>
