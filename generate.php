@@ -28,7 +28,7 @@ $stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
 $year = date("Y"); // Defina o ano
 $array_data = getdate();
 $day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
-$only_day = $array_data[yday];
+//$only_day = $array_data[yday];
 
 // Defina a pasta onde deseja salvar os arquivos baixados
 
