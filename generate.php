@@ -23,8 +23,8 @@ foreach ($stations as $station) {
     $obj->setDay($day_year);
 
     // Opcional: Defina o diretório raiz do FTP se necessário
-    $ftp_root = '/';
-    $obj->ftp_changeRootTo($ftp_root);
+    /* $ftp_root = '/';
+    $obj->ftp_changeRootTo($ftp_root); */
 
     // Opcional: SNR
     $snr = true; // ou false dependendo da sua necessidade
