@@ -29,7 +29,7 @@ $year = 2024; // Defina o ano
 $day_year = 24137; // Defina o dia do ano
 
 // Defina a pasta onde deseja salvar os arquivos baixados
-$local_folder = '/home/braia/RINEX3';
+$local_folder = '/home/braia/RINEX3/';
 
 foreach ($stations as $station) {
     $obj->setName($station);
