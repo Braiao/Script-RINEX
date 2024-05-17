@@ -1111,7 +1111,7 @@ class Cigala
      */
     public function ftp_connect()
     {
-        $this->ftp_password = trim(shell_exec("cat /var/www/is/classes/serv_ftp.auth"));
+        $this->ftp_password = trim(shell_exec("cat serv_ftp.auth"));
         $ftp_conn = ftp_connect($this->ftp_host);
 
         // login with username and password
