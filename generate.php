@@ -28,6 +28,7 @@ $stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
 $year = date("Y"); // Defina o ano
 $array_data = getdate();
 $day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
+$only_day = $array_data[yday];
 
 // Defina a pasta onde deseja salvar os arquivos baixados
 
@@ -50,7 +51,7 @@ foreach ($stations as $station) {
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
     $i = 0;
-    $file = $station . $array_data[yday] . '00.24_.gz';
+    $file = $station . "$array_data[yday]" . '00.24_.gz';
     $files = [$file];
     //$files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
     $lenght = count($files);
