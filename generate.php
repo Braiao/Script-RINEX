@@ -74,8 +74,9 @@ foreach ($stations as $station) {
     $i = 0;
     $file = $station . "$array_data[yday]" . "$letter" . $counter . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-    $command = "gzip $station . '$array_data[yday]' . '$letter' . $counter . $doisdig_ano . '_'";    
-    $output = shell_exec($command); 
+    $name = "$station . '$array_data[yday]' . '$letter' . $counter . $doisdig_ano . '_'";    
+    $arquivo = fopen($name.".txt", 'w');
+    fclose($arquivo);
     echo "chegou aqui;";
     $files = [$file];
     //$files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
