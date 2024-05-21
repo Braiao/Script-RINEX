@@ -56,7 +56,7 @@ foreach ($stations as $station) {
     $obj->setName($station);
     $obj->setYear($year);
     $obj->setDay($day_year);
-
+    
    
     
 
@@ -71,15 +71,18 @@ foreach ($stations as $station) {
     $interval = 30; // Intervalo em segundos
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
     
+
     $i = 0;
-    $file = $station . "$array_data[yday]" . '$letter' . $counter . $doisdig_ano . '_.gz';
+    $file = $station . "$array_data[yday]" . "$letter" . $counter . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
     $name = $station . "$array_data[yday]" . "$letter" . $counter . $doisdig_ano . '_';    
     $arquivo = fopen("tmp/".$name.".txt", 'w');
     fclose($arquivo);
     echo "chegou aqui;";
+    echo $letter       ;
     echo $name;
     echo $file;
+    
     $files = [$file];
     //$files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
     $lenght = count($files);
