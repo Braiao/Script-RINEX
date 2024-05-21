@@ -135,10 +135,11 @@ foreach ($stations as $station) {
         }
         echo $message;
     }
+    $command = "rm -r tmp/" . $name . ".txt";
+    shell_exec($command);
 }
 
-$command = "rm -r tmp/" . $name . ".txt";
-shell_exec($command);
+
 ftp_close($conn_id);
 //$obj->ftp_disconnect();
 //$obj->db_disconnect();
