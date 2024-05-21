@@ -32,7 +32,7 @@ $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
 // Defina a pasta onde deseja salvar os arquivos baixados
-$counter = 00;
+$counter = -15;
 
 $letter = ord("a");
 if($letter > ord("x"))
