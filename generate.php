@@ -56,7 +56,7 @@ foreach ($stations as $station) {
     $obj->setName($station);
     $obj->setYear($year);
     $obj->setDay($day_year);
-    
+    $letter_hora = chr($letter);
    
     
 
@@ -73,13 +73,13 @@ foreach ($stations as $station) {
     
 
     $i = 0;
-    $file = $station . "$array_data[yday]" . "$letter" . $counter . $doisdig_ano . '_.gz';
+    $file = $station . "$array_data[yday]" . "$letter_hora" . $counter . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-    $name = $station . "$array_data[yday]" . "$letter" . $counter . $doisdig_ano . '_';    
+    $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . $doisdig_ano . '_';    
     $arquivo = fopen("tmp/".$name.".txt", 'w');
     fclose($arquivo);
     echo "chegou aqui;";
-    echo $letter       ;
+    echo $letter;
     echo $name;
     echo $file;
     
