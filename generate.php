@@ -34,7 +34,7 @@ $doisdig_ano = date("y");
 // Defina a pasta onde deseja salvar os arquivos baixados
 $counter = -15;
 
-$letter = ord("x");
+$letter = ord("a");
 if($letter > ord("x"))
 {
     $letter = ord("a");
