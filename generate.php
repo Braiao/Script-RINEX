@@ -32,6 +32,23 @@ $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
 // Defina a pasta onde deseja salvar os arquivos baixados
+$counter = -15;
+
+$letter = ord("x");
+if($letter > ord("x"))
+{
+    $letter = ord("a");
+    $day_year = $day_year + 1;  
+}
+if($counter == 45)
+{
+    $letter++;
+}
+else
+{
+    $counter = $counter + 15;
+}
+
 
 
 foreach ($stations as $station) {
@@ -39,6 +56,9 @@ foreach ($stations as $station) {
     $obj->setName($station);
     $obj->setYear($year);
     $obj->setDay($day_year);
+
+   
+    
 
     // Opcional: Defina o diretório raiz do FTP se necessário
     /* $ftp_root = '/';
@@ -52,7 +72,8 @@ foreach ($stations as $station) {
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
     $i = 0;
-    $file = $station . "$array_data[yday]" . 'a00.'.$doisdig_ano.'_.gz';
+    $file = $station . "$array_data[yday]" . $letter . $counter . $doisdig_ano . '_.gz';
+    //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
     $files = [$file];
     //$files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
     $lenght = count($files);
