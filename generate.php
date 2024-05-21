@@ -49,6 +49,11 @@ else
     $counter = $counter + 15;
 }
 
+if($counter == 0)
+{
+    $counter = 00;
+}
+
 
 
 foreach ($stations as $station) {
@@ -79,7 +84,7 @@ foreach ($stations as $station) {
     $arquivo = fopen("tmp/".$name.".txt", 'w');
     fclose($arquivo);
     echo "chegou aqui;";
-    echo $letter;
+
     echo $name;
     echo $file;
     
