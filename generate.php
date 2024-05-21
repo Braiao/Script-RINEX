@@ -32,7 +32,7 @@ $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
 // Defina a pasta onde deseja salvar os arquivos baixados
-$counter = -15;
+$counter = 00;
 
 $letter = ord("a");
 if($letter > ord("x"))
@@ -76,8 +76,6 @@ foreach ($stations as $station) {
     $interval = 30; // Intervalo em segundos
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
     
-
-    $i = 0;
     $file = $station . "$array_data[yday]" . "$letter_hora" . $counter . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
     $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . $doisdig_ano . '_';    
