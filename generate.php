@@ -137,7 +137,8 @@ foreach ($stations as $station) {
     }
 }
 
-
+$command = "rm -r tmp/" . $name . ".txt";
+shell_exec($command);
 ftp_close($conn_id);
 //$obj->ftp_disconnect();
 //$obj->db_disconnect();
