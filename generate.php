@@ -56,8 +56,23 @@ if($counter == 0)
 
 
 
+
+
+
 foreach ($stations as $station) {
-    $local_folder = '/home/braia/RINEX3/' . $station . '/';
+    
+    $local_folder = '/RINEX3' . '/' . $station;
+
+    if(!is_dir($local_folder . '/' . $day_year))
+    {
+        $command_folder = "mkdir " . $local_folder . '/' . $day_year;
+        shell_exec($command_folder);
+    }
+
+    $local_folder = '/RINEX3' . '/' . $station . '/' . $day_year;
+
+
+
     $obj->setName($station);
     $obj->setYear($year);
     $obj->setDay($day_year);

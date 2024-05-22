@@ -28,7 +28,7 @@ class Cigala
     public $week_path = "/var/www/is/htdocs/view/weekly";
     public $full_fonts_path = "/var/www/is/fonts/";
     //public $full_fonts_path="c:/ms4w/apps/cigala/fonts/";    
-    public $full_rinex_path = "tmp/";
+    public $full_rinex_path = "/";
     public $full_rinex_path2 = "/var/www/is/htdocs/ismrtool/rinex/tmp2/";
     public $root_path = "/var/www/is/htdocs/";
     //public $unzip_="c://"Arquivos de Programas/"/winrar/winrar ";    
