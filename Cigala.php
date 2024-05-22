@@ -1467,7 +1467,7 @@ class Cigala
     function displayEllapsedTimeAndMemory($elapsed, $str)
     {
         echo $str . ' response time: ', $elapsed['time'], ' secs. Memory usage: ',
-        $elapsed['memory'], 'Mb <br>';
+        $elapsed['memory'], 'Mb ';
     }
 
     /**

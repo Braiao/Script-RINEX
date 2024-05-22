@@ -31,7 +31,6 @@ $day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
 $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
-// Defina a pasta onde deseja salvar os arquivos baixados
 $counter = -15;
 
 $letter = ord("a");
@@ -103,7 +102,7 @@ foreach ($stations as $station) {
         $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
     }
     
-    $arquivo = fopen("tmp/" . $name . ".txt", 'w');
+    $arquivo = fopen("tmp/" . $name , 'w');
     fclose($arquivo);
     //echo "chegou aqui;";
 
@@ -138,7 +137,7 @@ foreach ($stations as $station) {
     //echo "<br>";
 
     // Verificar o arquivo
-    if (!filesize($obj->rinex_path . $name . '.txt')) {                    
+    if (!filesize($obj->rinex_path . $obj->getFile())) {                    
         echo "Error: all data from this day are corrupt. Try another day or station, please.";
     } else {
         // Mover o arquivo para a pasta local
