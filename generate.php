@@ -138,7 +138,7 @@ foreach ($stations as $station) {
     //echo "<br>";
 
     // Verificar o arquivo
-    if (!filesize($obj->rinex_path . $obj->getFile())) {                    
+    if (!filesize($obj->rinex_path . $name)) {                    
         echo "Error: all data from this day are corrupt. Try another day or station, please.";
     } else {
         // Mover o arquivo para a pasta local
@@ -152,6 +152,22 @@ foreach ($stations as $station) {
     }
     $command = "rm -r tmp/" . $name . ".txt";
     shell_exec($command);
+
+
+    /* if (!filesize($obj->rinex_path . $obj->getFile())) {                    
+        echo "Error: all data from this day are corrupt. Try another day or station, please.";
+    } else {
+        // Mover o arquivo para a pasta local
+        $local_file = $local_folder . basename($obj->getFile());
+        if (rename($obj->rinex_path . $obj->getFile(), $local_file)) {
+            echo "Arquivo baixado com sucesso: '$local_file'>$local_file";
+        } else {
+            echo "Erro ao mover o arquivo para a pasta local.";
+        }
+        echo $message;
+    }
+    $command = "rm -r tmp/" . $name . ".txt";
+    shell_exec($command); */
 }
 
 
