@@ -68,7 +68,7 @@ foreach ($stations as $station) {
         shell_exec($command_folder);
     }
 
-    $local_folder = '/RINEX3' . '/' . $station . '/' . $day_year;
+    $local_folder = '/RINEX3' . '/' . $station . '/' . $day_year . '/';
 
 
 
