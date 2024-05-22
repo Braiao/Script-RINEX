@@ -93,13 +93,13 @@ foreach ($stations as $station) {
     {
         $file = $station . "$array_data[yday]" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_.gz';
         //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-        $name = $station . "$array_data[yday]" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_';    
+        $name = $station . "$array_data[yday]" . "a" . "00" . '.' . $doisdig_ano . '_';    
     }
     else
     {
         $file = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_.gz';
         //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-        $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
+        $name = $station . "$array_data[yday]" . "a" . $counter . '.' . $doisdig_ano . '_';   
     }
     
     $arquivo = gzopen("tmp/" . $name , 'w');
