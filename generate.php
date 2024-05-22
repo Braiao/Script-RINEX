@@ -103,12 +103,12 @@ foreach ($stations as $station) {
         $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
     }
     
-    $arquivo = fopen("tmp/".$name.".txt", 'w');
+    $arquivo = fopen("tmp/".$name.".gz", 'w');
     fclose($arquivo);
-    echo "chegou aqui;";
+    //echo "chegou aqui;";
 
-    echo $name;
-    echo $file;
+    //echo $name;
+    //echo $file;
     
     $files = [$file];
     //$files = ['STSH137a00.24_.gz']; // Adicione seus arquivos aqui
@@ -133,20 +133,20 @@ foreach ($stations as $station) {
 
     $time_rinex = $obj->stop_counter($start);
 
-    echo "<br>";
+    //echo "<br>";
     if ($time_rinex) $obj->displayEllapsedTimeAndMemory($time_rinex, "Rinex");        
-    echo "<br>";
+    //echo "<br>";
 
     // Verificar o arquivo
     if (!filesize($obj->rinex_path . $obj->getFile())) {                    
-        echo "<br><b>Error: all data from this day are corrupt. Try another day or station, please.</b><br>";
+        echo "Error: all data from this day are corrupt. Try another day or station, please.";
     } else {
         // Mover o arquivo para a pasta local
         $local_file = $local_folder . basename($obj->getFile());
         if (rename($obj->rinex_path . $obj->getFile(), $local_file)) {
-            echo "Arquivo baixado com sucesso: <a href='$local_file'>$local_file</a><br>";
+            echo "Arquivo baixado com sucesso: '$local_file'>$local_file";
         } else {
-            echo "Erro ao mover o arquivo para a pasta local.<br>";
+            echo "Erro ao mover o arquivo para a pasta local.";
         }
         echo $message;
     }
