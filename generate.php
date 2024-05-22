@@ -149,7 +149,7 @@ foreach ($stations as $station) {
         }
         echo $message;
     }
-    $command = "rm -r tmp/" . $name . ".txt";
+    $command = "rm -r tmp/" . $name;
     shell_exec($command);
 
 
