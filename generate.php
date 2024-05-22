@@ -138,7 +138,7 @@ foreach ($stations as $station) {
     //echo "<br>";
 
     // Verificar o arquivo
-    if (!filesize($obj->rinex_path . $name)) {                    
+    if (!filesize($obj->rinex_path . $name . '.txt')) {                    
         echo "Error: all data from this day are corrupt. Try another day or station, please.";
     } else {
         // Mover o arquivo para a pasta local
