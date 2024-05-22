@@ -102,8 +102,8 @@ foreach ($stations as $station) {
         $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
     }
     
-    $arquivo = fopen("tmp/" . $file , 'w');
-    fclose($arquivo);
+    $arquivo = gzopen("tmp/" . $file , 'w');
+    gzclose($arquivo);
     //echo "chegou aqui;";
 
     //echo $name;
