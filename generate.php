@@ -103,7 +103,7 @@ foreach ($stations as $station) {
         $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
     }
     
-    $arquivo = fopen("tmp/" . $name, 'w');
+    $arquivo = fopen("tmp/" . $name . ".txt", 'w');
     fclose($arquivo);
     //echo "chegou aqui;";
 
