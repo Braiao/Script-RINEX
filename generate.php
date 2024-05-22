@@ -26,7 +26,7 @@ $start = $obj->start_counter();
 // Defina as estações, ano e dia fixos
 $stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
 $year = date("Y"); // Defina o ano
-$array_data = getdate();
+$array_data = "137"//getdate();
 $day_year ="24137";// date("y")."$array_data[yday]"; // Defina o dia do ano
 $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
