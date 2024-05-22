@@ -103,7 +103,16 @@ foreach ($stations as $station) {
     }
     
     $arquivo = gzopen("tmp/" . $file , 'w');
-    gzclose($arquivo);
+    if($arquivo)
+    {
+        gzclose($arquivo);
+        echo "Arquivo criado com sucesso";
+    }
+    else
+    {
+        echo "Erro ao criar o arquivo .gz";
+    }
+    
     //echo "chegou aqui;";
 
     //echo $name;
