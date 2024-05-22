@@ -26,8 +26,8 @@ $start = $obj->start_counter();
 // Defina as estações, ano e dia fixos
 $stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
 $year = date("Y"); // Defina o ano
-$array_data = "137";//getdate();
-$day_year ="24137";// date("y")."$array_data[yday]"; // Defina o dia do ano
+$array_data = getdate();
+$day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
 $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
@@ -91,15 +91,15 @@ foreach ($stations as $station) {
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
     if($counter == 0)
     {
-        $file = $station . "$array_data" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_.gz';
+        $file = $station . "$array_data[yday]" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_.gz';
         //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-        $name = $station . "$array_data" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_';    
+        $name = $station . "$array_data[yday]" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_';    
     }
     else
     {
-        $file = $station . "$array_data" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_.gz';
+        $file = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_.gz';
         //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-        $name = $station . "$array_data" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
+        $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
     }
     
     $arquivo = gzopen("tmp/" . $file , 'w');
@@ -159,7 +159,7 @@ foreach ($stations as $station) {
         echo $message;
     }
     $command = "rm -r tmp/" . $file;
-    shell_exec($command);
+   // shell_exec($command);
 
 
     /* if (!filesize($obj->rinex_path . $obj->getFile())) {                    
