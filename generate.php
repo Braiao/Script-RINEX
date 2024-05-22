@@ -102,7 +102,7 @@ foreach ($stations as $station) {
         $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
     }
     
-    $arquivo = gzopen("tmp/" . $file , 'w');
+    $arquivo = gzopen("tmp/" . $name , 'w');
     if($arquivo)
     {
         gzclose($arquivo);
@@ -159,7 +159,7 @@ foreach ($stations as $station) {
         echo $message;
     }
     $command = "rm -r tmp/" . $file;
-   // shell_exec($command);
+   //shell_exec($command);
 
 
     /* if (!filesize($obj->rinex_path . $obj->getFile())) {                    
