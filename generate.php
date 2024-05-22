@@ -102,7 +102,7 @@ foreach ($stations as $station) {
         $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
     }
     
-    $arquivo = fopen("tmp/" . $name , 'w');
+    $arquivo = fopen("tmp/" . $file , 'w');
     fclose($arquivo);
     //echo "chegou aqui;";
 
@@ -149,7 +149,7 @@ foreach ($stations as $station) {
         }
         echo $message;
     }
-    $command = "rm -r tmp/" . $name;
+    $command = "rm -r tmp/" . $file;
     shell_exec($command);
 
 
