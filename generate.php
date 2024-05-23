@@ -31,30 +31,15 @@ $day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
 $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
-$counter = -15;
 
-$letter = ord("a");
-if($letter > ord("x"))
-{
-    $letter = ord("a");
-    $day_year = $day_year + 1;  
-}
-if($counter == 45)
-{
-    $letter++;
-}
-else
-{
-    $counter = $counter + 15;
-}
+$current_hour = $array_data['hours'];
+$current_minute = $array_data['minutes'];
 
-if($counter == 0)
-{
-    $counter = 00;
-}
+$hour_letter = chr(ord('a') + $current_hour);
 
 
-
+$minute = (int)floor($current_minute / 15) * 15;
+$minute_formatted = str_pad($minute, 2, '0', STR_PAD_LEFT);
 
 
 
@@ -89,18 +74,11 @@ foreach ($stations as $station) {
     // Defina o intervalo desejado
     $interval = 30; // Intervalo em segundos
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
-    if($counter == 0)
-    {
-        $file = $station . "$array_data[yday]" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_.gz';
-        //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-        $name = $station . "$array_data[yday]" . "$letter_hora" . "00" . '.' . $doisdig_ano . '_';    
-    }
-    else
-    {
-        $file = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_.gz';
-        //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-        $name = $station . "$array_data[yday]" . "$letter_hora" . $counter . '.' . $doisdig_ano . '_';   
-    }
+
+    $file = $station . "$array_data[yday]" . $hour_letter . $minute_formatted . '.' . $doisdig_ano . '_.gz';
+    //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
+    $name = $station . "$array_data[yday]" . "$letter_hora" . $minute_formatted . '.' . $doisdig_ano . '_';   
+    
     
     $arquivo = gzopen("tmp/" . $name , 'w');
     if($arquivo)
@@ -159,7 +137,7 @@ foreach ($stations as $station) {
         echo $message;
     }
     $command = "rm -r tmp/" . $file;
-   //shell_exec($command);
+    shell_exec($command);
 
 
     /* if (!filesize($obj->rinex_path . $obj->getFile())) {                    
