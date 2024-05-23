@@ -60,7 +60,7 @@ foreach ($stations as $station) {
     $obj->setName($station);
     $obj->setYear($year);
     $obj->setDay($day_year);
-    $letter_hora = chr($letter);
+    //$letter_hora = chr($letter);
    
     
 
@@ -77,7 +77,7 @@ foreach ($stations as $station) {
 
     $file = $station . "$array_data[yday]" . $hour_letter . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-    $name = $station . "$array_data[yday]" . "$letter_hora" . $minute_formatted . '.' . $doisdig_ano . '_';   
+    $name = $station . "$array_data[yday]" . $hour_letter . $minute_formatted . '.' . $doisdig_ano . '_';   
     
     
     $arquivo = gzopen("tmp/" . $name , 'w');
