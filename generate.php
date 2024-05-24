@@ -107,7 +107,7 @@ foreach ($stations as $station) {
 
     flush();
     $merge = [];
-    foreach ($files as $file) {
+    //foreach ($files as $file) {
         $obj->setFile($file);                                                               
         $obj->getBinaryFile();                
         $obj->extractRinexLinux();
@@ -115,7 +115,7 @@ foreach ($stations as $station) {
         $merge[] = $obj->getFile();   
         //echo str_pad("File $i of $lenght.<br>", 512, ' ', STR_PAD_RIGHT);                    
         flush();                    
-    }                
+   // }                
 
     $message = $obj->mergeRinex($merge);                   
 
