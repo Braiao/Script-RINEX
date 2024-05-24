@@ -108,7 +108,8 @@ foreach ($stations as $station) {
     flush();
     $merge = [];
     foreach ($files as $file) {
-        $obj->setFile($file);                                                               
+        $obj->setFile($file);    
+        echo $file;                                                           
         $obj->getBinaryFile();                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
