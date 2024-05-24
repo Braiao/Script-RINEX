@@ -118,10 +118,11 @@ foreach ($stations as $station) {
         flush();                    
     }              
     
-    echo $merge;
+    
 
     $message = $obj->mergeRinex($merge);                   
 
+    echo $message;
     $time_rinex = $obj->stop_counter($start);
 
     //echo "<br>";
