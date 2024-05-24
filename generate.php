@@ -148,7 +148,7 @@ foreach ($stations as $station) {
         }
         echo $message;
     }
-    $command = "rm -r" . $tmp_dir . $file;
+    $command = "rm -r /script/Script-RINEX/tmp/". $file;
     //shell_exec($command);
 }
 
