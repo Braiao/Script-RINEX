@@ -11,7 +11,7 @@ require_once 'Cigala.php';
 
 class CigalaRinex extends Cigala {
 
-    $base_dir = __DIR__;
+    private $base_dir = __DIR__;
     public $rinex_path = $base_dir . '/tmp/';
     public $sbf2rin_exe = "/opt/Septentrio/RxTools/bin/sbf2rin"; //"/opt/Septentrio/RxTools/bin/sbf2rin";
     public $sbf2ismr_exe = "/opt/Septentrio/RxTools/bin/sbf2ismr"; //"/opt/Septentrio/RxTools/bin/sbf2ismr";

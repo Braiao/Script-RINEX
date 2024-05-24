@@ -11,7 +11,7 @@
 class Cigala
 {
 
-    $base_dir = __DIR__;
+    private $base_dir = __DIR__;
     //dbms config.    
     private $db_host; //primary host 
     private $db_user;
