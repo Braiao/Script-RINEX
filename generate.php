@@ -75,9 +75,11 @@ foreach ($stations as $station) {
     $interval = 30; // Intervalo em segundos
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
+    $name = $station . "$array_data[yday]" . $hour_letter . $minute_formatted . '.' . $doisdig_ano . '_';  
+
     $file = $station . "$array_data[yday]" . $hour_letter . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
-    $name = $station . "$array_data[yday]" . $hour_letter . $minute_formatted . '.' . $doisdig_ano . '_';   
+     
     
     
     $arquivo = gzopen("tmp/" . $name , 'w');
