@@ -113,18 +113,19 @@ foreach ($stations as $station) {
         $obj->getBinaryFile();                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
+        $obj->setLetter_hour($hour_letter);
         $merge[] = $obj->getFile();   
         //echo str_pad("File $i of $lenght.<br>", 512, ' ', STR_PAD_RIGHT);                    
         flush();                    
     }              
     
     
-    //echo '       2-       '.$obj->getFile();
+    echo '       2-       '.$obj->getFile();
 
     $message = $obj->mergeRinex($merge);                   
     //echo $message;
 
-    //echo '       3-       '.$obj->getFile();
+    echo '       3-       '.$obj->getFile();
 
     $time_rinex = $obj->stop_counter($start);
     
