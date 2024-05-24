@@ -106,18 +106,18 @@ foreach ($stations as $station) {
   //  echo "Converting: <br>";
 
     flush();
-    //$merge = [];
+    $merge = [];
     foreach ($files as $file) {
         $obj->setFile($file);                                                               
         $obj->getBinaryFile();                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
-        //$merge[] = $obj->getFile();   
+        $merge[] = $obj->getFile();   
         //echo str_pad("File $i of $lenght.<br>", 512, ' ', STR_PAD_RIGHT);                    
         flush();                    
     }                
 
-   // $message = $obj->mergeRinex($merge);                   
+    $message = $obj->mergeRinex($merge);                   
 
     $time_rinex = $obj->stop_counter($start);
 
