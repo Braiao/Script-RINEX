@@ -3,6 +3,9 @@ require_once 'CigalaRinex.php';
 ini_set("max_execution_time", 15000);  
 ini_set("output_buffering", 128);
 
+$base_dir = __DIR__;
+$tmp_dir = $base_dir . '/tmp/';
+
 $obj = new CigalaRinex();
 $ftp_host = "200.145.185.149";
 $ftp_user = "cigala_ftp";
@@ -17,6 +20,8 @@ if(ftp_login($conn_id, $ftp_user, $ftp_password))
 
     $obj->setFtp_conn($conn_id);
 }
+
+
 
 //$obj->ftp_connect();
 //$obj->db_connect();
@@ -72,7 +77,7 @@ foreach ($stations as $station) {
     $file = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
-    $arquivo = gzopen("tmp/" . $name , 'w');
+    $arquivo = gzopen($tmp_dir . $name , 'w');
     if($arquivo)
     {
         gzclose($arquivo);
@@ -141,7 +146,7 @@ foreach ($stations as $station) {
         }
         echo $message;
     }
-    $command = "rm -r tmp/" . $file;
+    $command = "rm -r" . $tmp_dir . $file;
     //shell_exec($command);
 }
 
