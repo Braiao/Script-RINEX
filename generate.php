@@ -119,9 +119,13 @@ foreach ($stations as $station) {
     }              
     
     
-    echo '       '.$obj->getFile();
+    echo '       2-       '.$obj->getFile();
+
     $message = $obj->mergeRinex($merge);                   
     //echo $message;
+
+    echo '       3-       '.$obj->getFile();
+
     $time_rinex = $obj->stop_counter($start);
 
     //echo "<br>";
