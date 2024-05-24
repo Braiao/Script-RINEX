@@ -11,7 +11,7 @@
 class Cigala
 {
 
-    private $base_dir = __DIR__;
+    //private $base_dir = __DIR__;
     //dbms config.    
     private $db_host; //primary host 
     private $db_user;
@@ -32,7 +32,7 @@ class Cigala
     public $week_path = "/var/www/is/htdocs/view/weekly";
     public $full_fonts_path = "/var/www/is/fonts/";
     //public $full_fonts_path="c:/ms4w/apps/cigala/fonts/";    
-    public $full_rinex_path = $base_dir . '/tmp/';
+    public $full_rinex_path;
     public $full_rinex_path2 = "/var/www/is/htdocs/ismrtool/rinex/tmp2/";
     public $root_path = "/var/www/is/htdocs/";
     //public $unzip_="c://"Arquivos de Programas/"/winrar/winrar ";    
@@ -52,6 +52,14 @@ class Cigala
     private $day;
     private $file;
 
+    public function __construct()
+    {
+        $this->full_rinex_path = __DIR__ . '/tmp/';
+    }
+
+    public function getTmpDir() {
+        return $this->full_rinex_path;
+    }
     /**
      * Setup access to PostgreSQL Database
      */

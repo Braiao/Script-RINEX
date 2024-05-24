@@ -11,9 +11,7 @@ require_once 'Cigala.php';
 
 class CigalaRinex extends Cigala {
 
-    private $base_dir = __DIR__;
-    private $tmp = $base_dir . '/tmp/';
-    public $rinex_path = $tmp;
+    public $rinex_path;
     public $sbf2rin_exe = "/opt/Septentrio/RxTools/bin/sbf2rin"; //"/opt/Septentrio/RxTools/bin/sbf2rin";
     public $sbf2ismr_exe = "/opt/Septentrio/RxTools/bin/sbf2ismr"; //"/opt/Septentrio/RxTools/bin/sbf2ismr";
     public $x;
@@ -23,6 +21,15 @@ class CigalaRinex extends Cigala {
     public $antenna;
     public $tmp_folder = null;
     public $letter_hour = null;
+
+    public function __construct()
+    {
+        $this->rinex_path = __DIR__ . '/tmp/';
+    }
+
+    public function getTmpDir() {
+        return $this->rinex_path;
+    }
 
     public function setLetter_hour($letter)
     {
