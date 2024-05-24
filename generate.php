@@ -118,7 +118,7 @@ foreach ($stations as $station) {
         flush();                    
     }                
 
-    $message = $obj->mergeRinex($merge);                   
+    $message = $obj->mergeRinex($file);                   
 
     $time_rinex = $obj->stop_counter($start);
 
