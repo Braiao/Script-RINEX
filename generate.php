@@ -121,8 +121,7 @@ foreach ($stations as $station) {
     
 
     $message = $obj->mergeRinex($merge);                   
-
-    echo $message;
+    //echo $message;
     $time_rinex = $obj->stop_counter($start);
 
     //echo "<br>";
@@ -134,7 +133,10 @@ foreach ($stations as $station) {
         echo "Error: all data from this day are corrupt. Try another day or station, please.";
     } else {
         // Mover o arquivo para a pasta local
+
         $local_file = $local_folder . basename($obj->getFile());
+        echo '       '.$obj->getFile();
+        echo '       '.$local_file;
         if (rename($obj->rinex_path . $obj->getFile(), $local_file)) {
             echo "Arquivo baixado com sucesso: '$local_file'>$local_file";
         } else {
