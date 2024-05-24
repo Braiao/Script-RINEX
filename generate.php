@@ -80,7 +80,7 @@ foreach ($stations as $station) {
     $name = $station . "$array_data[yday]" . $hour_letter . $minute_formatted . '.' . $doisdig_ano . '_';   
     
     
-    $arquivo = gzopen("tmp/" . $name , 'w');
+    $arquivo = gzopen("/root/script/Script-RINEX/tmp/" . $name , 'w');
     if($arquivo)
     {
         gzclose($arquivo);
