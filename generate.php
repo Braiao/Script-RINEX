@@ -60,19 +60,11 @@ foreach ($stations as $station) {
     $obj->setName($station);
     $obj->setYear($year);
     $obj->setDay($day_year);
-    //$letter_hora = chr($letter);
-   
-    
 
-    // Opcional: Defina o diretório raiz do FTP se necessário
-    /* $ftp_root = '/';
-    $obj->ftp_changeRootTo($ftp_root); */
+    $snr = true; 
 
-    // Opcional: SNR
-    $snr = true; // ou false dependendo da sua necessidade
 
-    // Defina o intervalo desejado
-    $interval = 30; // Intervalo em segundos
+    $interval = 30; 
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
     $name = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
@@ -80,8 +72,6 @@ foreach ($stations as $station) {
     $file = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
-    
-    
     $arquivo = gzopen("tmp/" . $name , 'w');
     if($arquivo)
     {
@@ -153,28 +143,10 @@ foreach ($stations as $station) {
     }
     $command = "rm -r tmp/" . $file;
     //shell_exec($command);
-
-
-    /* if (!filesize($obj->rinex_path . $obj->getFile())) {                    
-        echo "Error: all data from this day are corrupt. Try another day or station, please.";
-    } else {
-        // Mover o arquivo para a pasta local
-        $local_file = $local_folder . basename($obj->getFile());
-        if (rename($obj->rinex_path . $obj->getFile(), $local_file)) {
-            echo "Arquivo baixado com sucesso: '$local_file'>$local_file";
-        } else {
-            echo "Erro ao mover o arquivo para a pasta local.";
-        }
-        echo $message;
-    }
-    $command = "rm -r tmp/" . $name . ".txt";
-    shell_exec($command); */
 }
 
 
 ftp_close($conn_id);
-//$obj->ftp_disconnect();
-//$obj->db_disconnect();
 
 
 ?>
