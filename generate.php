@@ -119,7 +119,7 @@ foreach ($stations as $station) {
     }              
     
     
-
+    echo '       '.$obj->getFile();
     $message = $obj->mergeRinex($merge);                   
     //echo $message;
     $time_rinex = $obj->stop_counter($start);
@@ -134,10 +134,10 @@ foreach ($stations as $station) {
     } else {
         // Mover o arquivo para a pasta local
 
-        echo '       '.$obj->getFile();
+        //echo '       '.$obj->getFile();
         $local_file = $local_folder . basename($obj->getFile());
         
-        echo '       '.$local_file;
+        //echo '       '.$local_file;
         if (rename($obj->rinex_path . $obj->getFile(), $local_file)) {
             echo "Arquivo baixado com sucesso: '$local_file'>$local_file";
         } else {
