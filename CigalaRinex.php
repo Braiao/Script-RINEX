@@ -7,12 +7,12 @@
  */
 require_once 'Cigala.php';
 
-$base_dir = __DIR__;
-$tmp_dir = $base_dir . '/tmp/';
+
 
 class CigalaRinex extends Cigala {
 
-    public $rinex_path = $tmp_dir;
+    $base_dir = __DIR__;
+    public $rinex_path = $base_dir . '/tmp/';
     public $sbf2rin_exe = "/opt/Septentrio/RxTools/bin/sbf2rin"; //"/opt/Septentrio/RxTools/bin/sbf2rin";
     public $sbf2ismr_exe = "/opt/Septentrio/RxTools/bin/sbf2ismr"; //"/opt/Septentrio/RxTools/bin/sbf2ismr";
     public $x;
