@@ -125,6 +125,7 @@ foreach ($stations as $station) {
     //echo $message;
 
     echo '       3-       '.$obj->getFile();
+    $obj->setFile($file);
 
     $time_rinex = $obj->stop_counter($start);
 
