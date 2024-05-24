@@ -137,7 +137,7 @@ foreach ($stations as $station) {
         echo $message;
     }
     $command = "rm -r tmp/" . $file;
-    shell_exec($command);
+    //shell_exec($command);
 
 
     /* if (!filesize($obj->rinex_path . $obj->getFile())) {                    
