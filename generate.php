@@ -3,8 +3,8 @@ require_once 'CigalaRinex.php';
 ini_set("max_execution_time", 15000);  
 ini_set("output_buffering", 128);
 
-$base_dir = __DIR__;
-$tmp_dir = $base_dir . '/tmp/';
+/* $base_dir = __DIR__;
+$tmp_dir = $base_dir . '/tmp/'; */
 
 $obj = new CigalaRinex();
 $ftp_host = "200.145.185.149";
@@ -77,7 +77,7 @@ foreach ($stations as $station) {
     $file = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
-    $arquivo = gzopen($tmp_dir . $name , 'w');
+    $arquivo = gzopen("/tmp/" . $name , 'w');
     if($arquivo)
     {
         gzclose($arquivo);
