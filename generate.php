@@ -134,8 +134,9 @@ foreach ($stations as $station) {
     } else {
         // Mover o arquivo para a pasta local
 
-        $local_file = $local_folder . basename($obj->getFile());
         echo '       '.$obj->getFile();
+        $local_file = $local_folder . basename($obj->getFile());
+        
         echo '       '.$local_file;
         if (rename($obj->rinex_path . $obj->getFile(), $local_file)) {
             echo "Arquivo baixado com sucesso: '$local_file'>$local_file";
