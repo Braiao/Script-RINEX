@@ -119,16 +119,15 @@ foreach ($stations as $station) {
     }              
     
     
-    echo '       2-       '.$obj->getFile();
+    //echo '       2-       '.$obj->getFile();
 
     $message = $obj->mergeRinex($merge);                   
     //echo $message;
 
-    echo '       3-       '.$obj->getFile();
-    $obj->setFile($file);
+    //echo '       3-       '.$obj->getFile();
 
     $time_rinex = $obj->stop_counter($start);
-
+    
     //echo "<br>";
     if ($time_rinex) $obj->displayEllapsedTimeAndMemory($time_rinex, "Rinex");        
     //echo "<br>";
