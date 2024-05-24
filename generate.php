@@ -130,6 +130,8 @@ foreach ($stations as $station) {
 
     $out_name = substr($obj->getFile(), 0, 7) . $obj->getLetter_hour() . substr($obj->getFile(), 8);
     // Verificar o arquivo
+
+    echo '       4-       '.$obj->getFile();
     if (!filesize($obj->rinex_path . ($obj->getFile()))) {                    
         echo "Error: all data from this day are corrupt. Try another day or station, please.";
     } else {
