@@ -4,7 +4,11 @@
  * @abstract This main class controls the data flow process (from ftp server to DBMS)
  * @author Bruno C. Vani (brunovani22@gmail.com) 
  * 
+ * 
+ * 
  */
+$base_dir = __DIR__;
+$tmp_dir = $base_dir . '/tmp/';
 class Cigala
 {
 
@@ -28,7 +32,7 @@ class Cigala
     public $week_path = "/var/www/is/htdocs/view/weekly";
     public $full_fonts_path = "/var/www/is/fonts/";
     //public $full_fonts_path="c:/ms4w/apps/cigala/fonts/";    
-    public $full_rinex_path = "tmp/";
+    public $full_rinex_path = $tmp_dir;
     public $full_rinex_path2 = "/var/www/is/htdocs/ismrtool/rinex/tmp2/";
     public $root_path = "/var/www/is/htdocs/";
     //public $unzip_="c://"Arquivos de Programas/"/winrar/winrar ";    
