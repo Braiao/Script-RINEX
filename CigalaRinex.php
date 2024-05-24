@@ -790,7 +790,7 @@ class CigalaRinex extends Cigala {
 
         $message = "";
 
-        $out_name = substr($this->getFile(), 0, 7) . $this->getLetter_hour() . substr($this->getFile(), 8); //1 to session
+        $out_name = substr($this->getFile(), 0, 7) . "1" . substr($this->getFile(), 8); //1 to session
         $fp_o = @fopen($this->full_rinex_path . $out_name, 'w');
 
         //$rinex[count($rinex)-1]="lala";        
