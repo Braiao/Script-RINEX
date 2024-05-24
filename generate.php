@@ -133,7 +133,7 @@ foreach ($stations as $station) {
     if ($time_rinex) $obj->displayEllapsedTimeAndMemory($time_rinex, "Rinex");        
     //echo "<br>";
 
-    //$out_name = substr($this->getFile(), 0, 7) . "1" . substr($this->getFile(), 8);
+    $out_name = substr($this->getFile(), 0, 7) . $obj->getLetter_hour() . substr($this->getFile(), 8);
     // Verificar o arquivo
     if (!filesize($obj->rinex_path . $obj->getFile())) {                    
         echo "Error: all data from this day are corrupt. Try another day or station, please.";
@@ -141,7 +141,7 @@ foreach ($stations as $station) {
         // Mover o arquivo para a pasta local
 
         //echo '       '.$obj->getFile();
-        $local_file = $local_folder . basename(substr($this->getFile(), 0, 7) . $obj->getLetter_hour() . substr($this->getFile(), 8));
+        $local_file = $local_folder . basename($out_name);
         
         //echo '       '.$local_file;
         if (rename($obj->rinex_path . $obj->getFile(), $local_file)) {
