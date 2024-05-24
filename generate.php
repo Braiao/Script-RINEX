@@ -116,7 +116,9 @@ foreach ($stations as $station) {
         $merge[] = $obj->getFile();   
         //echo str_pad("File $i of $lenght.<br>", 512, ' ', STR_PAD_RIGHT);                    
         flush();                    
-    }                
+    }              
+    
+    echo $merge[];
 
     $message = $obj->mergeRinex($merge);                   
 
