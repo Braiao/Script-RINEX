@@ -118,7 +118,7 @@ foreach ($stations as $station) {
         flush();                    
     }              
     
-    echo $merge[];
+    echo $merge;
 
     $message = $obj->mergeRinex($merge);                   
 
