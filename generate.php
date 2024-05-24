@@ -133,7 +133,7 @@ foreach ($stations as $station) {
     if ($time_rinex) $obj->displayEllapsedTimeAndMemory($time_rinex, "Rinex");        
     //echo "<br>";
 
-    $out_name = substr($this->getFile(), 0, 7) . $obj->getLetter_hour() . substr($this->getFile(), 8);
+    $out_name = substr($obj->getFile(), 0, 7) . $obj->getLetter_hour() . substr($obj->getFile(), 8);
     // Verificar o arquivo
     if (!filesize($obj->rinex_path . $obj->getFile())) {                    
         echo "Error: all data from this day are corrupt. Try another day or station, please.";
