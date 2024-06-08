@@ -7,9 +7,9 @@ ini_set("output_buffering", 128);
 $tmp_dir = $base_dir . '/tmp/'; */
 
 $obj = new CigalaRinex();
-$ftp_host = "200.145.185.149";
-$ftp_user = "cigala_ftp";
-$ftp_password = "B0mb31r1nh0";
+$ftp_host = "127.0.0.0";
+$ftp_user = "root";
+$ftp_password = "admin";
 
 $conn_id = ftp_connect($ftp_host);
 if(ftp_login($conn_id, $ftp_user, $ftp_password))
@@ -32,10 +32,9 @@ $start = $obj->start_counter();
 $stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
 $year = date("Y"); // Defina o ano
 $array_data = getdate();
-$only_day = $array_data['yday'] + 1;
-$day_year = date("y") . $only_day; // Defina o dia do ano
+$day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
 $doisdig_ano = date("y");
-
+//$only_day = $array_data[yday];
 
 
 $current_hour = $array_data['hours'];
@@ -51,13 +50,7 @@ $minute_formatted = str_pad($minute, 2, '0', STR_PAD_LEFT);
 
 foreach ($stations as $station) {
     
-    $local_folder = '/RINEX3' . '/' . $station . '/' . $year;
-
-    if(!is_dir($local_folder))
-    {
-        $command_folder = "mkdir " . $local_folder;
-        shell_exec($command_folder);
-    }
+    $local_folder = '/RINEX3' . '/' . $station;
 
     if(!is_dir($local_folder . '/' . $day_year))
     {
@@ -65,7 +58,7 @@ foreach ($stations as $station) {
         shell_exec($command_folder);
     }
 
-    $local_folder = '/RINEX3' . '/' . $station . '/' . $year . '/' . $day_year . '/';
+    $local_folder = '/RINEX3' . '/' . $station . '/' . $day_year . '/';
 
 
 
@@ -79,12 +72,12 @@ foreach ($stations as $station) {
     $interval = 30; 
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
-    $name = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
+    $name = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
 
-    $file = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
+    $file = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
-    $arquivo = gzopen("/script/newScript/Script-RINEX/tmp/" . $name , 'w');
+    $arquivo = gzopen("/script/Script-RINEX/tmp/" . $name , 'w');
     if($arquivo)
     {
         gzclose($arquivo);
@@ -111,12 +104,7 @@ foreach ($stations as $station) {
     $merge = [];
     foreach ($files as $file) {
         $obj->setFile($file);    
-        echo "          ";    
-        echo $file;
-        echo "          ";    
-        echo "          ";    
-        echo $name;             
-        echo "          ";                                                 
+        echo $file;                                                           
         $obj->getBinaryFile();                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
