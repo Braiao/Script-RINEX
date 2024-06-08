@@ -32,7 +32,14 @@ $start = $obj->start_counter();
 $stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
 $year = date("Y"); // Defina o ano
 $array_data = getdate();
-$day_year = date("y").$array_data[yday]; // Defina o dia do ano
+
+//A função captura o dia do ano contando a partir de 0
+$only_day = $array_data[yday];
+//corrigindo isso
+$only_day++;
+
+$day_year = date("y").$only_day; // Defina o dia do ano
+
 $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
@@ -78,9 +85,9 @@ foreach ($stations as $station) {
     $interval = 30; 
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
-    $name = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
+    $name = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
 
-    $file = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
+    $file = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
     $arquivo = gzopen("/script/Script-RINEX/Script-RINEX/tmp/" . $name , 'w');  // --Pasta que o arquivo temporário será criado
