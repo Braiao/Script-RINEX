@@ -7,9 +7,9 @@ ini_set("output_buffering", 128);
 $tmp_dir = $base_dir . '/tmp/'; */
 
 $obj = new CigalaRinex();
-$ftp_host = "127.0.0.0";
-$ftp_user = "root";
-$ftp_password = "admin";
+$ftp_host = "200.145.185.149";
+$ftp_user = "cigala_ftp";
+$ftp_password = "B0mb31r1nh0";
 
 $conn_id = ftp_connect($ftp_host);
 if(ftp_login($conn_id, $ftp_user, $ftp_password))
