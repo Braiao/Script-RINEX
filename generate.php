@@ -51,7 +51,7 @@ $minute_formatted = str_pad($minute, 2, '0', STR_PAD_LEFT);
 
 foreach ($stations as $station) {
     
-    $local_folder = '/RINEX3' . '/' . $station;
+    $local_folder = '/RINEX3' . '/' . $station . '/' . $year;
 
     if(!is_dir($local_folder . '/' . $day_year))
     {
@@ -59,7 +59,7 @@ foreach ($stations as $station) {
         shell_exec($command_folder);
     }
 
-    $local_folder = '/RINEX3' . '/' . $station . '/' . $day_year . '/';
+    $local_folder = '/RINEX3' . '/' . $station . '/' . $year . '/' . $day_year . '/';
 
 
 
@@ -73,9 +73,9 @@ foreach ($stations as $station) {
     $interval = 30; 
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
-    $name = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
+    $name = $station . "$only_day" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
 
-    $file = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
+    $file = $station . "$only_day" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
     $arquivo = gzopen("/script/Script-RINEX/tmp/" . $name , 'w');
