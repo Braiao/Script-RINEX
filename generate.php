@@ -77,7 +77,7 @@ foreach ($stations as $station) {
     $file = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
-    $arquivo = gzopen("/script/Script-RINEX/tmp/" . $name , 'w');
+    $arquivo = gzopen("/script/Script-RINEX/Script-RINEX/tmp/" . $name , 'w');
     if($arquivo)
     {
         gzclose($arquivo);
