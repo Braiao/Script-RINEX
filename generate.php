@@ -114,7 +114,6 @@ foreach ($stations as $station) {
         echo "          ";    
         echo $file;
         echo "          ";    
-        echo $full_rinex_path;
         echo "          ";    
         echo $name;             
         echo "          ";                                                 
