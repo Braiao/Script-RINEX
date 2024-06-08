@@ -24,8 +24,8 @@ class Cigala
     public  $db_conn;
     
     //ftp  config.
-    protected $ftp_host = "200.145.185.149";
-    protected $ftp_user = "cigala_ftp";
+    protected $ftp_host = "";
+    protected $ftp_user = "";
     protected $ftp_password = "";
     public    $ftp_conn;
     //paths 
