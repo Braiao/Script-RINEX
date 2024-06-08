@@ -53,6 +53,12 @@ foreach ($stations as $station) {
     
     $local_folder = '/RINEX3' . '/' . $station . '/' . $year;
 
+    if(!is_dir($local_folder))
+    {
+        $command_folder = "mkdir " . $local_folder;
+        shell_exec($command_folder);
+    }
+
     if(!is_dir($local_folder . '/' . $day_year))
     {
         $command_folder = "mkdir " . $local_folder . '/' . $day_year;
