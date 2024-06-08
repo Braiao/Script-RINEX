@@ -79,9 +79,9 @@ foreach ($stations as $station) {
     $interval = 30; 
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
-    $name = $station . "$only_day" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
+    $name = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
 
-    $file = $station . "$only_day" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
+    $file = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
     $arquivo = gzopen("/script/newScript/Script-RINEX/tmp/" . $name , 'w');
