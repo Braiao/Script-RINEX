@@ -32,7 +32,7 @@ $start = $obj->start_counter();
 $stations = ['STSH', 'STCB']; // Adicione suas estações específicas aqui
 $year = date("Y"); // Defina o ano
 $array_data = getdate();
-$day_year = date("y")."$array_data[yday]"; // Defina o dia do ano
+$day_year = date("y").str_pad($array_data['yday'] + 1, 3, '0', STR_PAD_LEFT); // Defina o dia do ano
 $doisdig_ano = date("y");
 //$only_day = $array_data[yday];
 
@@ -72,9 +72,9 @@ foreach ($stations as $station) {
     $interval = 30; 
     $version = "-R3"; // Defina a versão desejada ("-R3", "2.11c", ou null)
 
-    $name = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
+    $name = $station . str_pad($array_data['yday'] + 1, 3, '0', STR_PAD_LEFT) . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_';  
 
-    $file = $station . "$array_data[yday]" . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
+    $file = $station . str_pad($array_data['yday'] + 1, 3, '0', STR_PAD_LEFT) . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
     $arquivo = gzopen("/script/Script-RINEX/tmp/" . $name , 'w');
