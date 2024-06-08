@@ -49,8 +49,14 @@ $minute_formatted = str_pad($minute, 2, '0', STR_PAD_LEFT);
 
 
 foreach ($stations as $station) {
-    
-    $local_folder = '/RINEX3' . '/' . $station;
+
+    $local_folder = '/RINEX3' . '/' . $station . '/' . $year;
+
+    if(!is_dir($local_folder))
+    {
+        $command_folder = "mkdir " . $local_folder;
+        shell_exec($command_folder);
+    }
 
     if(!is_dir($local_folder . '/' . $day_year))
     {
@@ -58,7 +64,7 @@ foreach ($stations as $station) {
         shell_exec($command_folder);
     }
 
-    $local_folder = '/RINEX3' . '/' . $station . '/' . $day_year . '/';
+    $local_folder = '/RINEX3' . '/' . $station . '/' . $year . '/' . $day_year . '/';
 
 
 
