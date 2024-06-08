@@ -34,7 +34,7 @@ $year = date("Y"); // Defina o ano
 $array_data = getdate();
 
 //A função captura o dia do ano contando a partir de 0
-$only_day = $array_data[yday];
+$only_day = "$array_data[yday]";
 //corrigindo isso
 $only_day++;
 
