@@ -11,7 +11,7 @@ require_once 'Cigala.php';
 
 class CigalaRinex extends Cigala {
 
-    public $rinex_path = '/script/newScript/Script-RINEX/tmp/';
+    public $rinex_path = '/script/Script-RINEX/tmp/';
     public $sbf2rin_exe = "/opt/Septentrio/RxTools/bin/sbf2rin"; //"/opt/Septentrio/RxTools/bin/sbf2rin";
     public $sbf2ismr_exe = "/opt/Septentrio/RxTools/bin/sbf2ismr"; //"/opt/Septentrio/RxTools/bin/sbf2ismr";
     public $x;
@@ -291,7 +291,6 @@ class CigalaRinex extends Cigala {
 
         if (ftp_chdir($this->ftp_conn, "/" . $this->getName() . "/" . $this->getYear() . "/" . $this->getDay())) {
             //ftp_pasv ($this->ftp_conn, true);
-            //echo $this->full_rinex_path;
             if (ftp_get($this->ftp_conn, $this->full_rinex_path . $this->getFile(), $this->getFile(), FTP_BINARY)) {
                 echo "Successfully copied {$this->getFile()}.";
             } else {
