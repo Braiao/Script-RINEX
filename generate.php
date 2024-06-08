@@ -47,7 +47,7 @@ $doisdig_ano = date("y");
 $current_hour = $array_data['hours'];
 $current_minute = $array_data['minutes'];
 
-$hour_letter = chr(ord('a') + $current_hour);
+$hour_letter = chr(ord('a') + $current_hour-1);
 
 
 $minute = (int)floor($current_minute / 15) * 15;
@@ -90,7 +90,7 @@ foreach ($stations as $station) {
     $file = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
-    $arquivo = gzopen("/script/Script-RINEX/Script-RINEX/tmp/" . $name . ".gz", 'w');  // --Pasta que o arquivo temporário será criado
+    $arquivo = gzopen("/script/Script-RINEX/Script-RINEX/tmp/" . $name, 'w');  // --Pasta que o arquivo temporário será criado
     echo "       ";
     echo $name;
     echo "       ";
