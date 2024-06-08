@@ -111,9 +111,13 @@ foreach ($stations as $station) {
     $merge = [];
     foreach ($files as $file) {
         $obj->setFile($file);    
+        echo "          ";    
         echo $file;
-        echo "          ";     
-        echo $name;                                                          
+        echo "          ";    
+        echo $this->full_rinex_path;
+        echo "          ";    
+        echo $name;             
+        echo "          ";                                                 
         $obj->getBinaryFile();                
         $obj->extractRinexLinux();
         $obj->sbfConversion($version, $interval, $snr, true); 
