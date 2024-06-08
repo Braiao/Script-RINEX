@@ -90,7 +90,7 @@ foreach ($stations as $station) {
     $file = $station . $only_day . "$hour_letter" . $minute_formatted . '.' . $doisdig_ano . '_.gz';
     //station+diadoano+horapeloalfabeto+minuto(00-15-30-45)+.doiultimosdigitosdoano+_.gz 
      
-    $arquivo = gzopen("/script/Script-RINEX/Script-RINEX/tmp/" . $name, 'w');  // --Pasta que o arquivo temporário será criado
+    $arquivo = gzopen("/script/Script-RINEX/tmp/" . $name, 'w');  // --Pasta que o arquivo temporário será criado
     echo "       ";
     echo $name;
     echo "       ";
@@ -165,7 +165,7 @@ foreach ($stations as $station) {
         echo $message;
     }
     $command = "rm -r /script/Script-RINEX/tmp/". $file;
-    //shell_exec($command);
+    shell_exec($command);
 }
 
 
