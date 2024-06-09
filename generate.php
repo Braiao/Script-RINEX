@@ -47,7 +47,13 @@ $doisdig_ano = date("y");
 $current_hour = $array_data['hours'];
 $current_minute = $array_data['minutes'];
 
-$hour_letter = chr(ord('a') + $current_hour-1);
+// Ajusta a hora para a correspondência correta de letras
+$adjusted_hour = $current_hour > 0 ? $current_hour - 1 : 0;
+
+
+echo $current_hour;
+
+$hour_letter = chr(ord('a') + $adjusted_hour);
 
 
 $minute = (int)floor($current_minute / 15) * 15;
@@ -165,7 +171,7 @@ foreach ($stations as $station) {
         echo $message;
     }
     $command = "rm -r /script/Script-RINEX/tmp/". $file;
-    shell_exec($command);
+    //shell_exec($command);
 }
 
 
