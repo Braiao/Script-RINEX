@@ -288,7 +288,55 @@ class CigalaRinex extends Cigala {
         //echo ftp_pwd($this->ftp_conn)." na conversao <br>";
         //ftp_set_option($this->ftp_conn, FTP_TIMEOUT_SEC, 600*2);
         //echo ftp_get_option ( $this->ftp_conn, FTP_TIMEOUT_SEC );
+        if(ftp_nlist($this->ftp_conn, "/" . $this->getName() . "/" . $this->getYear() . "/" . $this->getDay()) == true)
+        {
+            if (ftp_chdir($this->ftp_conn, "/" . $this->getName() . "/" . $this->getYear() . "/" . $this->getDay())) {
+                //ftp_pasv ($this->ftp_conn, true);
+                if (ftp_get($this->ftp_conn, $this->full_rinex_path . $this->getFile(), $this->getFile(), FTP_BINARY)) {
+                    echo "Successfully copied {$this->getFile()}.";
+                } else {
 
+                    //echo $this->full_rinex_path . $this->getFile();
+
+                    echo "Error on downloading file {$this->getFile()}. ";
+                }
+                //back to ftp root
+                ftp_cdup($this->ftp_conn);  
+                ftp_cdup($this->ftp_conn);
+                ftp_cdup($this->ftp_conn);
+                //echo ftp_pwd($this->ftp_conn)." na conversao <br>";
+            } else
+                return false;
+        }
+        else
+        {
+            if (ftp_chdir($this->ftp_conn, "/" . $this->getName() . "/" . $this->getYear())) {
+                //ftp_pasv ($this->ftp_conn, true);
+                if (ftp_get($this->ftp_conn, $this->full_rinex_path . $this->getFile(), $this->getFile(), FTP_BINARY)) {
+                    echo "Successfully copied {$this->getFile()}.";
+                } else {
+
+                    //echo $this->full_rinex_path . $this->getFile();
+
+                    echo "Error on downloading file {$this->getFile()}. ";
+                }
+                //back to ftp root
+                ftp_cdup($this->ftp_conn);  
+                ftp_cdup($this->ftp_conn);
+                //echo ftp_pwd($this->ftp_conn)." na conversao <br>";
+            } else
+                return false;
+        }
+    }
+
+
+/*     function getBinaryFile() {
+
+        //echo $this->getName()."/".$this->getYear()."/".$this->getDay();   
+        //echo ftp_pwd($this->ftp_conn)." na conversao <br>";
+        //ftp_set_option($this->ftp_conn, FTP_TIMEOUT_SEC, 600*2);
+        //echo ftp_get_option ( $this->ftp_conn, FTP_TIMEOUT_SEC );
+        if(is_dir())
         if (ftp_chdir($this->ftp_conn, "/" . $this->getName() . "/" . $this->getYear() . "/" . $this->getDay())) {
             //ftp_pasv ($this->ftp_conn, true);
             if (ftp_get($this->ftp_conn, $this->full_rinex_path . $this->getFile(), $this->getFile(), FTP_BINARY)) {
@@ -306,7 +354,7 @@ class CigalaRinex extends Cigala {
             //echo ftp_pwd($this->ftp_conn)." na conversao <br>";
         } else
             return false;
-    }
+    } */
 
 //ok
     /**
